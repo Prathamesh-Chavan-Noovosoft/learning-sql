@@ -1,5 +1,7 @@
-select b.facid, sum(b.slots) "Total Slots" from bookings b
-group by b.facid
-order by b.facid;
+-- List the total slots booked per facility
+SELECT b.facid, SUM(b.slots) "Total Slots"
+FROM bookings b
+GROUP BY b.facid
+ORDER BY b.facid;
 
 

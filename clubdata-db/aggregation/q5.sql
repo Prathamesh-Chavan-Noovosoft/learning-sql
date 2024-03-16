@@ -1,5 +1,7 @@
-select b.facid, sum(b.slots) "Total Slots" from cd.bookings b
-		where b.starttime::date >= '2012-09-01'
-		and b.starttime::date <= '2012-09-30'
-		group by b.facid
-order by sum(b.slots);
+-- List the total slots booked per facility in a given month
+SELECT b.facid, SUM(b.slots) "Total Slots"
+FROM bookings b
+WHERE b.starttime::DATE >= '2012-09-01'
+  AND b.starttime::DATE <= '2012-09-30'
+GROUP BY b.facid
+ORDER BY SUM(b.slots);

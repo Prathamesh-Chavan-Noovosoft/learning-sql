@@ -1,4 +1,6 @@
-select b.facid, sum(b.slots) "Total Slots" from bookings b
-group by b.facid
-having sum(b.slots) > 1000
-order by b.facid;
+-- List facilities with more than 1000 slots booked
+SELECT b.facid, SUM(b.slots) "Total Slots"
+FROM bookings b
+GROUP BY b.facid
+HAVING SUM(b.slots) > 1000
+ORDER BY b.facid;

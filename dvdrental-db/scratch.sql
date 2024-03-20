@@ -1,3 +1,4 @@
+-- Create table + data from a subquery
 CREATE TABLE customer_address(id) AS (SELECT id
                                       FROM customer c
                                                    JOIN address a
